@@ -39,7 +39,7 @@ try {
 }
 
 
-// generate keys form 0000 to 32654 and place in an array of size 30
+// generate keys form 0000 to 32654 and place them in an array of size 30
       int[] keys = new int[30];
       for (int i = 0; i < 30; i++) {
           int key = (int)(Math.random() * 32655);
@@ -49,7 +49,7 @@ try {
    for(repetition = 0; repetition < repetitions; repetition++) {
       start = System.currentTimeMillis();
 	
-// use the keys generated above to search in the array of nodes using linear search and binary search
+// use the keys generated to search in the array of nodes use linear search and binary  search
       for (int i = 0; i < 30; i++) {
          linearSearch(n, keys[i],nodes);
          binarySearch(n, keys[i],nodes);
@@ -108,8 +108,6 @@ static void  linearearch(int n, int key, int[]a) {
     return -1;
 }
 
-// Simple Node class (int key, String value) and helper methods
-
 class Node {
 
     private int key;
@@ -120,10 +118,7 @@ class Node {
 
     this.value = value;
 }
-
-
     public int getKey() { return key; }
-
     public String getValue() { return value; }
     public void setKey(int key) { this.key = key; }
     public void setValue(String value) { this.value = value; }
@@ -137,8 +132,6 @@ public String toString() {
 
 
 class NodeUtil {
-
-// factory method returning a Node with an int key and String value
     public static Node createNode(int key, String value) {
     return new Node(key, value);
 }
