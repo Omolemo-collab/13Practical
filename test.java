@@ -28,7 +28,7 @@ int repetition, repetitions = 30;
       time = (double)(finish - start);
       runTime += time;
       runTime2 += (time*time); }
-
+// 
    double aveRuntime = runTime/repetitions;
    double stdDeviation = 
       Math.sqrt(runTime2 - repetitions*aveRuntime*aveRuntime)/(repetitions-1);
@@ -49,8 +49,27 @@ int repetition, repetitions = 30;
    System.out.println();
    System.out.println(); }	} 
 
-static void oneofyourMethods(int n, 
-                       yourMethodParameter1,
-                       yourMethodParameter2, . . . ) {
-// The declarations and body of your method / s   
-// The final statement of this code.} }
+static void binarySearch(int n,  int key, int[]a) {
+    int left = 0,right = n-1, middle;
+    while (left <= right){
+        middle = (left + right) / 2;
+
+        if (a[middle] ==key) {
+            return;
+        } else if (a[middle ] < key) {
+             left= middle + 1;
+        } else {
+
+            right= middle - 1;
+        }
+        return -1;
+    }
+
+static void  linearSearch(int n, int key, int[]a) {
+    for (int i = 0;i <  n;i++){
+        if (a[i] ==key) {
+             return;
+         }
+    }
+    return -1;
+}
