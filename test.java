@@ -1,4 +1,5 @@
-import java.lang.Math.*;   import java.io.*;   import java.text.*; import java.random.*;
+import java.lang.Math.*;   import java.io.*;   import java.text.*; import java.random.*; import java.util.Scanner;
+
 
 public class timeMethods{
 public static int N = ....;
@@ -13,15 +14,47 @@ double runTime = 0, runTime2 = 0, time;
 double totalTime = 0.0;
 int n = N;
 int repetition, repetitions = 30;
+// import all data from text file and sort data into a nodes with int keys and String values, then place the nodes in an array
+import java.io.ulysses-1.numbered.txt;
+import java.io.FileNotFoundException;
+try {
+    File file = new File("ulysses-1.numbered.txt");
+    Scanner scanner = new Scanner(file);
+    Node[] nodes = new Node[32654]; 
+    int index = 0;
 
+    while (scanner.hasNextLine() && index < nodes.length) {
+        String line = scanner.nextLine();
+        String[] parts = line.split(" ");  separated by a space
+        if (parts.length == 2) {
+            int key = Integer.parseInt(parts[0].trim());
+            String value = parts[1].trim();
+            nodes[index] = NodeUtil.createNode(key, value);
+            index++;
+        }
+    }
+    scanner.close();
+} catch (FileNotFoundException e) {
+    System.out.println("File not found: " + e.getMessage());
+}
+
+
+// generate keys form 0000 to 32654 and place in an array of size 30
+      int[] keys = new int[30];
+      for (int i = 0; i < 30; i++) {
+          int key = (int)(Math.random() * 32655);
+          // store the key in an array
+      }
    runTime = 0;
    for(repetition = 0; repetition < repetitions; repetition++) {
       start = System.currentTimeMillis();
 	
-      // generate keys form 0000 to 32654 and place in an array of size 
-      linearSearch(n, 100, new int[n]);
-      binarySearch(n, 100, new int[n]);
-      // Figure out how to alter this guideline here,
+// use the keys generated above to search in the array of nodes using linear search and binary search
+      for (int i = 0; i < 30; i++) {
+         linearSearch(n, keys[i],nodes);
+         binarySearch(n, keys[i],nodes);
+      }
+    // Figure out how to alter this guideline here,
 		
       finish = System.currentTimeMillis();
 			
