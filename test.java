@@ -1,4 +1,4 @@
-import java.lang.Math.*;   import java.io.*;   import java.text.*;
+import java.lang.Math.*;   import java.io.*;   import java.text.*; import java.random.*;
 
 public class timeMethods{
 public static int N = ....;
@@ -17,10 +17,10 @@ int repetition, repetitions = 30;
    runTime = 0;
    for(repetition = 0; repetition < repetitions; repetition++) {
       start = System.currentTimeMillis();
-		
-      // call the procedures to time here:
-      linearsearch (...);
-      binarysearch (...);
+	
+      // generate keys form 0000 to 32654 and place in an array of size 
+      linearSearch(n, 100, new int[n]);
+      binarySearch(n, 100, new int[n]);
       // Figure out how to alter this guideline here,
 		
       finish = System.currentTimeMillis();
@@ -64,12 +64,50 @@ static void binarySearch(int n,  int key, int[]a) {
         }
         return -1;
     }
+}
 
-static void  linearSearch(int n, int key, int[]a) {
+static void  linearearch(int n, int key, int[]a) {
     for (int i = 0;i <  n;i++){
         if (a[i] ==key) {
              return;
          }
     }
     return -1;
+}
+
+// Simple Node class (int key, String value) and helper methods
+
+class Node {
+
+    private int key;
+    private String value;
+
+    public Node(int key, String value) {
+    this.key = key;
+
+    this.value = value;
+}
+
+
+    public int getKey() { return key; }
+
+    public String getValue() { return value; }
+    public void setKey(int key) { this.key = key; }
+    public void setValue(String value) { this.value = value; }
+
+public String toString() {
+
+    return "Node{key=" + key + ", value='" + value + "'}";
+    }
+}
+
+
+
+class NodeUtil {
+
+// factory method returning a Node with an int key and String value
+    public static Node createNode(int key, String value) {
+    return new Node(key, value);
+}
+
 }
