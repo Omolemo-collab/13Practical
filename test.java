@@ -3,6 +3,7 @@ import java.lang.Math.*;   import java.io.*;   import java.text.*; import java.r
 
 public class timeMethods{
 public static int N = ....;
+
 public static void main(String args[]){
 
 DecimalFormat twoD = new DecimalFormat("0.00");
